@@ -35,12 +35,14 @@ class SingleProductCategory : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_single_product_category)
 
-        val categoryId: Long = intent.getLongExtra("categoryId",1)
 
-        Log.d("CategoryIdProblem",categoryId.toString())
 
         val apiService : ProductDBInterface = ProductCategoryDBClient.getClient()
         productRepository = ProductCategoryRepository(apiService)
+
+        val categoryId: Long = intent.getLongExtra("categoryId",1)
+
+      //  Log.i("CategoryIdProblem",categoryId.toString())
 
         viewModel = getViewModel(categoryId)
 
