@@ -39,6 +39,7 @@ class CategoryAdapterSecondChild (val categoryList: List<FourthCategory>) : Recy
                 itemView.context.startActivity(intent)*/
                 Log.d("categoryIdKey",categoryList[adapterPosition].categoryId.toString())
                 val intent = Intent(itemView.context, SingleProductCategory::class.java)
+                intent.putExtra("categoryName",categoryList[adapterPosition].displayName)
                 intent.putExtra("categoryId",categoryList[adapterPosition].categoryId)
                 itemView.context.startActivity(intent)
             }

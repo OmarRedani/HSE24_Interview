@@ -3,4 +3,5 @@
     <string name="purchase">Purchase</string>
     <string name="added_to_basket">Product added to your basket</string>
     <string name="connection_problem">Connection Problem!!</string>
+    <string name="basket_activity_name">Your Basket</string>
 </resources>

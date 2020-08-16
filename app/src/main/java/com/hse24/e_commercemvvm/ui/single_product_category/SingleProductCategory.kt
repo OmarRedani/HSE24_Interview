@@ -3,6 +3,7 @@ package com.hse24.e_commercemvvm.ui.single_product_category
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -41,8 +42,12 @@ class SingleProductCategory : AppCompatActivity() {
         productRepository = ProductCategoryRepository(apiService)
 
         val categoryId: Long = intent.getLongExtra("categoryId",1)
+        val categoryName: String = intent.getStringExtra("categoryName")
 
-      //  Log.i("CategoryIdProblem",categoryId.toString())
+        // add name and back button to the support action bar
+        supportActionBar?.title = categoryName
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         viewModel = getViewModel(categoryId)
 
@@ -72,5 +77,13 @@ class SingleProductCategory : AppCompatActivity() {
                 return SingleProductCategoryViewModel(productRepository,categoryId) as T
             }
         })[SingleProductCategoryViewModel::class.java]
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home){
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
+
     }
 }

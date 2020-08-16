@@ -40,7 +40,10 @@ class SingleProduct : AppCompatActivity() {
         setContentView(R.layout.activity_single_product)
 
         val productId: String = intent.getStringExtra("id")
-        Log.d("productId",productId)
+        val productName: String = intent.getStringExtra("name")
+
+        supportActionBar?.title = productName
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         mPurchaseViewModel = ViewModelProvider(this).get(PurchaseViewModel::class.java)
 
@@ -80,6 +83,9 @@ class SingleProduct : AppCompatActivity() {
         when(item.itemId){
             R.id.purchase_btn_menu -> {
                 newPurchaseActivity()
+            }
+            android.R.id.home -> {
+                finish()
             }
         }
         return super.onOptionsItemSelected(item)

@@ -48,6 +48,7 @@ class ProductCategoryAdapter(val categoryList: ProductResults) : RecyclerView.Ad
 
                 val intent = Intent(itemView.context, SingleProduct::class.java)
                 intent.putExtra("id",categoryList.productResults[adapterPosition].sku)
+                intent.putExtra("name",categoryList.productResults[adapterPosition].nameShort)
                 itemView.context.startActivity(intent)
             }
         }

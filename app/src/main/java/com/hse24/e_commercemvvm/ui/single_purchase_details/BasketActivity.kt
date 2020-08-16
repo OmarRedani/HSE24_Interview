@@ -2,6 +2,7 @@ package com.hse24.e_commercemvvm.ui.single_purchase_details
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +18,9 @@ class BasketActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basket)
 
+        supportActionBar?.title = resources.getString(R.string.basket_activity_name)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         mPurchaseViewModel = ViewModelProvider(this).get(PurchaseViewModel::class.java)
 
 
@@ -30,6 +34,13 @@ class BasketActivity : AppCompatActivity() {
             adapter.setData(user)
         })
 
+
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home){
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
 
     }
 }
