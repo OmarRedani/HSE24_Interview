@@ -1,8 +1,6 @@
 package com.hse24.e_commercemvvm.data.vo
 
 
-import com.google.gson.annotations.SerializedName
-
 data class ProductDetails(
     val imageUris: List<String>,
     val longDescription: String,

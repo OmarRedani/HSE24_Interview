@@ -13,17 +13,17 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.single_product_category.SingleProductCategory">
+        <activity android:name="com.hse24.e_commercemvvm.activities.single_product_category.SingleProductCategory">
         </activity>
-        <activity android:name=".ui.single_purchase_details.BasketActivity">
+        <activity android:name="com.hse24.e_commercemvvm.activities.single_purchase.BasketActivity">
         </activity>
-        <activity android:name=".ui.single_category_details.CategorySecondChild">
+        <activity android:name="com.hse24.e_commercemvvm.activities.single_category.CategorySecondChild">
         </activity>
-        <activity android:name=".ui.single_category_details.CategoryFirstChild">
+        <activity android:name="com.hse24.e_commercemvvm.activities.single_category.CategoryFirstChild">
         </activity>
-        <activity android:name=".ui.single_product_details.SingleProduct">
+        <activity android:name="com.hse24.e_commercemvvm.activities.single_product.SingleProduct">
         </activity>
-        <activity android:name=".ui.MainActivity">
+        <activity android:name="com.hse24.e_commercemvvm.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
