@@ -31,15 +31,16 @@ HSE24 App support the ability to add products to a local basket using Room Datab
 
 Project is created with:
 
-* Kotlin 1.3.41
-* Model View viewModel
-* LiveData 2.2.0
-* Retrofit and RxJava 2.5.0
-* Room Database 2.2.5
-* Pagination Infinite Scrolling 2.1.0
-* Coroutines 1.3.5
-* Gson Parsing Data 2.8.5
-* Glide 4.8.0
+* [Kotlin 1.3.41](https://github.com/kotlin)
+* [Model View viewModel](https://github.com/taehwandev/LifecycleExtensions)
+* [LiveData 2.2.0](https://github.com/taehwandev/LifecycleExtensions)
+* [Retrofit 2.5.0](https://github.com/square/retrofit)
+* [RxJava 2.5.0](https://github.com/ReactiveX/RxAndroid)
+* [Room Database 2.2.5](https://developer.android.com/jetpack/androidx/releases/room)
+* [Coroutines 1.3.5](https://developer.android.com/jetpack/androidx/releases/room)
+* [Pagination Infinite Scrolling 2.1.0](https://github.com/mirmilad/paging-coroutine)
+* [Gson 2.8.5](https://github.com/google/gson)
+* [Glide 4.8.0](https://github.com/bumptech/glide)
 
 ## Screenshots
 
