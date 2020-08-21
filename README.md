@@ -46,20 +46,10 @@ Project is created with:
 
 ## Screenshots
 
-<div class="row">
-  <div class="column">
-    <img src="screenshots/1.png" style="width:300">
-  </div>
-  <div class="column">
-    <img src="screenshots/2.png" style="width:300">
-  </div>
-  <div class="column">
-    <img src="screenshots/3.png" style="width:300">
-  </div>
-  <div class="column">
-      <img src="screenshots/4.png" style="width:300">
-  </div>
-  <div class="column">
-        <img src="screenshots/5.png" style="width:300">
-  </div>
-</div>
+<p float="left">
+  <img src="screenshots/1.png" style="width:200">
+  <img src="screenshots/2.png" style="width:200">
+  <img src="screenshots/3.png" style="width:200">
+  <img src="screenshots/4.png" style="width:200">
+  <img src="screenshots/5.png" style="width:200">
+</p>
