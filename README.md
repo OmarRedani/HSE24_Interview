@@ -46,4 +46,14 @@ Project is created with:
 
 ## Screenshots
 
-soon
+<div class="row">
+  <div class="column">
+    <img src="img_snow.jpg" style="width:300">
+  </div>
+  <div class="column">
+    <img src="img_forest.jpg" style="width:300">
+  </div>
+  <div class="column">
+    <img src="img_mountains.jpg" style="width:300">
+  </div>
+</div>
