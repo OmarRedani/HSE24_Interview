@@ -1,6 +1,6 @@
 # HSE24 Interview
 
-<img src="screenshots/hse24_logo.png" width="180">
+<img src="screenshots/hse24_design_logo.png" width="180">
 
 HSE24 App is a simple E-Commerce App with a professional and clean code built using kotlin.
 
@@ -23,11 +23,11 @@ HSE24 App support REST Interfaces in order to get category & product information
 
 ### Infinite Scrolling:
 
-HSE24 App support a product Lists with infinite Scrolling using paging library and it has the ability to get a product detail Page.
+HSE24 App support a product Lists with infinite Scrolling using [paging library](https://github.com/mirmilad/paging-coroutine) and it has the ability to get a product detail Page.
 
 ### Basket:
 
-HSE24 App support the ability to add products to a local basket using Room Database library. and it support also the ability to delete products from the Basket.
+HSE24 App support the ability to add products to a local basket using [Room Database library](https://developer.android.com/jetpack/androidx/releases/room). and it support also the ability to delete products from the Basket.
 
 ## Technologies Used
 
