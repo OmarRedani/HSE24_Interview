@@ -2,7 +2,7 @@
 
 HSE24 App is a simple E-Commerce App with a professional and clean code built using kotlin.
 
-<img src="screenshots/hse24_logo.png">
+<img src="screenshots/hse24_logo.png" width="200>
 
 ## Table Of Content
 
