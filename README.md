@@ -48,12 +48,18 @@ Project is created with:
 
 <div class="row">
   <div class="column">
-    <img src="img_snow.jpg" style="width:300">
+    <img src="screenshots/1.png" style="width:300">
   </div>
   <div class="column">
-    <img src="img_forest.jpg" style="width:300">
+    <img src="screenshots/2.png" style="width:300">
   </div>
   <div class="column">
-    <img src="img_mountains.jpg" style="width:300">
+    <img src="screenshots/3.png" style="width:300">
+  </div>
+  <div class="column">
+      <img src="screenshots/4.png" style="width:300">
+  </div>
+  <div class="column">
+        <img src="screenshots/5.png" style="width:300">
   </div>
 </div>
