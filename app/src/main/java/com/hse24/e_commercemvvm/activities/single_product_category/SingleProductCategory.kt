@@ -40,8 +40,8 @@ class SingleProductCategory : AppCompatActivity() {
         val categoryName: String = intent.getStringExtra("categoryName")
 
         // add name and back button to the support action bar
-        supportActionBar?.title = categoryName
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        product_category_name.text = categoryName
+        product_category_back.setOnClickListener { finish() }
 
 
         viewModel = getViewModel(categoryId)
@@ -101,11 +101,4 @@ class SingleProductCategory : AppCompatActivity() {
         })[SingleProductCategoryViewModel::class.java]
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == android.R.id.home){
-            finish()
-        }
-        return super.onOptionsItemSelected(item)
-
-    }
 }

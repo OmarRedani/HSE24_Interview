@@ -1,11 +1,15 @@
 package com.hse24.e_commercemvvm.adapters.single_product
 
+import android.app.ActionBar
 import android.content.Context
 import android.content.Intent
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +26,8 @@ import com.hse24.e_commercemvvm.data.vo.Paging
 import com.hse24.e_commercemvvm.data.vo.ProductDetails
 import com.hse24.e_commercemvvm.data.vo.ProductResults
 import kotlinx.android.synthetic.main.product_list_item.view.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 val imageSizeSuffix : String = "pics480.jpg"
 class ProductPagedListAdapter(public val context: Context) : PagedListAdapter<ProductDetails, RecyclerView.ViewHolder>(ProductDiffCallback()) {
@@ -92,7 +98,23 @@ class ProductPagedListAdapter(public val context: Context) : PagedListAdapter<Pr
 
         fun bind(productDetails: ProductDetails?, categoryList : PagedList<ProductDetails>){
             itemView.cv_product_title.text = productDetails?.nameShort
-            itemView.cv_product_price.text = "${productDetails?.productPrice?.price.toString() + "EUR"}"
+            itemView.brand_product_title.text = productDetails?.brandNameLong
+            itemView.cv_product_price.text = "${"€ " + productDetails?.productPrice?.price.toString()}"
+            if (productDetails?.productPrice?.referencePrice?.compareTo(0) != 0) {
+                GlobalScope.launch {
+                    val params : LinearLayout.LayoutParams = LinearLayout.LayoutParams(0,RelativeLayout.LayoutParams.MATCH_PARENT,1.0f)
+                    itemView.rv_price_ref.layoutParams = params
+                    itemView.cv_product_price.gravity = Gravity.RIGHT
+                    itemView.cv_product_price_ref.text = "${"€ " + productDetails?.productPrice?.referencePrice.toString()}"
+                }
+            }else{
+                GlobalScope.launch {
+                    val params : LinearLayout.LayoutParams = LinearLayout.LayoutParams(0,RelativeLayout.LayoutParams.MATCH_PARENT,0.0f)
+                    itemView.rv_price_ref.layoutParams = params
+                    itemView.cv_product_price.gravity = Gravity.CENTER
+                }
+
+            }
             if (productDetails != null){
                 val image = POSTER_BASE_URL + productDetails.imageUris[0] + imageSizeSuffix
                 Log.d("image",image)

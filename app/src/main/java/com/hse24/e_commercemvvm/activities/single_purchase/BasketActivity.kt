@@ -19,8 +19,7 @@ class BasketActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basket)
 
-        supportActionBar?.title = resources.getString(R.string.basket_activity_name)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        basket_name.text = resources.getString(R.string.basket_activity_name)
 
         mPurchaseViewModel = ViewModelProvider(this).get(PurchaseViewModel::class.java)
 

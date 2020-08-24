@@ -6,12 +6,60 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
-        tools:context=".ui.single_category_details.CategorySecondChild">
+        tools:context=".activities.single_category.CategorySecondChild">
+
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/second_category_toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@android:color/white"
+            android:elevation="4dp"
+            android:contentInsetLeft="0dp"
+            android:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            android:contentInsetRight="0dp"
+            android:contentInsetEnd="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+    >
+
+        <ImageView
+                android:id="@+id/second_category_back"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_arrow_back_black"
+                android:padding="16dp"
+                android:layout_marginStart="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+        />
+
+        <TextView
+                android:id="@+id/second_category_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:ellipsize="end"
+                android:textSize="18sp"
+                android:layout_marginLeft="18dp"
+                android:textColor="@color/near_black"
+                android:fontFamily="@font/heebo_bold"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_category_second"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/second_category_toolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+    >
 
     </androidx.recyclerview.widget.RecyclerView>
 

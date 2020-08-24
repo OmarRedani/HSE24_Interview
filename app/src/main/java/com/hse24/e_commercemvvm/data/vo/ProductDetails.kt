@@ -9,5 +9,8 @@ data class ProductDetails(
     val productPrice: ProductPrice,
     val sku: String,
     val status: String,
-    val title: String
+    val title: String,
+    val brandNameLong: String,
+    val averageStars: Double
+
 )

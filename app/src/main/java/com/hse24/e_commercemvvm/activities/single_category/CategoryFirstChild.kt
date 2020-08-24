@@ -20,9 +20,10 @@ class CategoryFirstChild : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category_first_child)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val position : Int = intent.getIntExtra("position",0)
-        supportActionBar?.title = dataCategory.children[position].displayName
+        first_category_name.text = dataCategory.children[position].displayName
+
+        first_category_back.setOnClickListener { finish() }
 
         dataCategoryFirst = dataCategory.children[position]
         val categoryAdapter =
@@ -33,13 +34,6 @@ class CategoryFirstChild : AppCompatActivity() {
         rv_category_first.layoutManager = LinearLayoutManager(this)
         rv_category_first.setHasFixedSize(true)
         rv_category_first.adapter = categoryAdapter
-
-    }
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == android.R.id.home){
-            finish()
-        }
-        return super.onOptionsItemSelected(item)
 
     }
 }

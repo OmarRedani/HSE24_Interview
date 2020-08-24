@@ -4,18 +4,30 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="8dp">
-    <TextView
-        android:id="@+id/error_msg_item"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Error Message"/>
+    >
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="40dp"
+    android:background="@color/near_black"
+                    android:layout_marginBottom="16dp"
+    >
+        <TextView
+                android:id="@+id/error_msg_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+
+                android:text="@string/error_message"
+                android:textColor="@color/line_color"
+                android:fontFamily="@font/heebo_extrabold"
+                android:textSize="15sp"
+                />
+    </RelativeLayout>
     <ProgressBar
         android:id="@+id/progress_bar_item"
         style="?android:attr/progressBarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:paddingBottom="8dp"/>
 
 </LinearLayout>

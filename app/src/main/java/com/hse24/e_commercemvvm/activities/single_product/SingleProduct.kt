@@ -26,6 +26,7 @@ import com.hse24.e_commercemvvm.data.viewmodels.SingleProductViewModel
 import com.hse24.e_commercemvvm.data.vo.ProductDetails
 import com.hse24.e_commercemvvm.activities.single_purchase.BasketActivity
 import kotlinx.android.synthetic.main.activity_single_product.*
+import kotlinx.android.synthetic.main.activity_single_product.view.*
 
 class SingleProduct : AppCompatActivity() {
 
@@ -42,10 +43,6 @@ class SingleProduct : AppCompatActivity() {
         setContentView(R.layout.activity_single_product)
 
         val productId: String = intent.getStringExtra("id")
-        val productName: String = intent.getStringExtra("name")
-
-        supportActionBar?.title = productName
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         mPurchaseViewModel = ViewModelProvider(this).get(PurchaseViewModel::class.java)
 
@@ -76,25 +73,11 @@ class SingleProduct : AppCompatActivity() {
             Toast.makeText(this,R.string.added_to_basket,Toast.LENGTH_LONG).show()
         }
 
+        single_product_back.setOnClickListener { finish() }
+        single_product_purchase.setOnClickListener { newPurchaseActivity() }
+
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.purchase_menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        when(item.itemId){
-            R.id.purchase_btn_menu -> {
-                newPurchaseActivity()
-            }
-            android.R.id.home -> {
-                finish()
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
 
     private fun newPurchaseActivity() {
         val intent = Intent(this,BasketActivity::class.java)
@@ -103,11 +86,16 @@ class SingleProduct : AppCompatActivity() {
 
     fun bindUI( it: ProductDetails){
 
+        tv_brand_name.text = it.brandNameLong
         tv_product_name.text = it.title
         tv_product_description.text = Html.fromHtml(it.longDescription)
+        rating_bar.rating = it.averageStars.toFloat()
+        rating_text.text = "(" + it.averageStars.toString() + ")"
+        price_label.text = it.productPrice.referencePriceLabel
+        label_price.text = it.productPrice.priceLabel
+        Log.d("refPrice"," : "+it.productPrice.referencePriceLabel)
+        price.text = it.productPrice.price.toString() + " €"
 
-        @Suppress()
-        tv_product_price.text = it.productPrice.price.toString() + " " + it.productPrice.currency
 
         // i just want to take only one image but in the real world i will take them all and use viewPager or something similar
         val productPosterURL = POSTER_BASE_URL + it.imageUris[0] + imageSizeSuffix

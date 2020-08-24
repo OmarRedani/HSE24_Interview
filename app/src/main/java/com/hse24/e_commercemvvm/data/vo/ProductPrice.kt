@@ -6,5 +6,8 @@ import com.google.gson.annotations.SerializedName
 data class ProductPrice(
     val country: String,
     val currency: String,
-    val price: Double
+    val price: Double,
+    val referencePrice: Double,
+    val referencePriceLabel: String,
+    val priceLabel: String
 )
