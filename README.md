@@ -29,6 +29,10 @@ HSE24 App support a product Lists with infinite Scrolling using [paging library]
 
 HSE24 App support the ability to add products to a local basket using [Room Database library](https://developer.android.com/jetpack/androidx/releases/room). and it support also the ability to delete products from the Basket.
 
+### Great Design
+
+Design inspiration from the original HSE App
+
 ## Technologies Used
 
 Project is created with:
@@ -43,6 +47,8 @@ Project is created with:
 * [Pagination Infinite Scrolling 2.1.0](https://github.com/mirmilad/paging-coroutine)
 * [Gson 2.8.5](https://github.com/google/gson)
 * [Glide 4.8.0](https://github.com/bumptech/glide)
+* [Material Rating Bar 1.4.0](https://github.com/zhanghai/MaterialRatingBar)
+* [Circle Image View 3.1.0](https://github.com/hdodenhof/CircleImageView)
 
 ## Screenshots
 
