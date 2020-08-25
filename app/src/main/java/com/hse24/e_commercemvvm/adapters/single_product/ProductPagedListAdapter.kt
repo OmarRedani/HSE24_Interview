@@ -3,6 +3,7 @@ package com.hse24.e_commercemvvm.adapters.single_product
 import android.app.ActionBar
 import android.content.Context
 import android.content.Intent
+import android.graphics.Paint
 import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -106,6 +107,7 @@ class ProductPagedListAdapter(public val context: Context) : PagedListAdapter<Pr
                     itemView.rv_price_ref.layoutParams = params
                     itemView.cv_product_price.gravity = Gravity.RIGHT
                     itemView.cv_product_price_ref.text = "${"€ " + productDetails?.productPrice?.referencePrice.toString()}"
+                    itemView.cv_product_price_ref.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
                 }
             }else{
                 GlobalScope.launch {

@@ -20,9 +20,9 @@ class BasketActivity : AppCompatActivity() {
         setContentView(R.layout.activity_basket)
 
         basket_name.text = resources.getString(R.string.basket_activity_name)
+        basket_back.setOnClickListener { finish() }
 
         mPurchaseViewModel = ViewModelProvider(this).get(PurchaseViewModel::class.java)
-
 
         val adapter =
             BasketAdapter(mPurchaseViewModel)
@@ -37,11 +37,5 @@ class BasketActivity : AppCompatActivity() {
 
 
     }
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == android.R.id.home){
-            finish()
-        }
-        return super.onOptionsItemSelected(item)
 
-    }
 }

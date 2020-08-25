@@ -6,4 +6,7 @@
     <string name="connection_problem">Connection Problem!!</string>
     <string name="basket_activity_name">Your Basket</string>
     <string name="error_message">Error Message</string>
+    <string name="l_schen">Löschen</string>
+    <string name="design_purpose">This only for design purpose !!!</string>
+    <string name="alright">alright</string>
 </resources>

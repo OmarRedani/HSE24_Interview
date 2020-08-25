@@ -76,6 +76,9 @@ dependencies {
     // Rating Bar
     implementation 'me.zhanghai.android.materialratingbar:library:1.4.0'
 
+    // SnackBar
+    implementation 'com.google.android.material:material:1.2.0'
+
     // Room components
     implementation "androidx.room:room-runtime:2.2.5"
     kapt "androidx.room:room-compiler:2.2.5"

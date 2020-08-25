@@ -196,6 +196,12 @@
                             android:layout_toRightOf="@id/price_label"
                           android:layout_width="1dp"
                           android:layout_height="match_parent"/>
+                    <View
+                            android:background="@android:color/darker_gray"
+                            android:layout_toRightOf="@id/price_label"
+                            android:layout_width="1dp"
+                            android:layout_marginLeft="3dp"
+                            android:layout_height="match_parent"/>
 
                     <TextView
                             android:id="@+id/price"
@@ -250,6 +256,9 @@
                 android:layout_marginLeft="18dp"
                 android:layout_marginRight="28dp"
                 android:orientation="horizontal"
+                android:foreground="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
         >
 
             <ImageView android:layout_width="0dp" android:layout_height="match_parent"

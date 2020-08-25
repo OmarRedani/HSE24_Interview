@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -14,6 +12,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 import com.hse24.e_commercemvvm.R
 import com.hse24.e_commercemvvm.data.repository.network_data_source.api.POSTER_BASE_URL
 import com.hse24.e_commercemvvm.data.repository.network_data_source.api.ProductDBClient
@@ -26,7 +25,7 @@ import com.hse24.e_commercemvvm.data.viewmodels.SingleProductViewModel
 import com.hse24.e_commercemvvm.data.vo.ProductDetails
 import com.hse24.e_commercemvvm.activities.single_purchase.BasketActivity
 import kotlinx.android.synthetic.main.activity_single_product.*
-import kotlinx.android.synthetic.main.activity_single_product.view.*
+import kotlinx.android.synthetic.main.basket_first_row.view.*
 
 class SingleProduct : AppCompatActivity() {
 
@@ -68,13 +67,21 @@ class SingleProduct : AppCompatActivity() {
 
         purchase.setOnClickListener{
 
-            val purchase = Purchase(0,productDetails.imageUris[0],productDetails.nameShort,productDetails.productPrice.price,productDetails.productPrice.currency)
+            val purchase = Purchase(0,productDetails.imageUris[0],productDetails.nameShort,productDetails.productPrice.price,productDetails.productPrice.currency,productDetails.productPrice.referencePrice,productDetails.brandNameLong,productDetails.productPrice.priceLabel)
             mPurchaseViewModel.addPurchase(purchase)
-            Toast.makeText(this,R.string.added_to_basket,Toast.LENGTH_LONG).show()
+            Snackbar.make(quantity, R.string.added_to_basket, Snackbar.LENGTH_LONG)
+                .show()
         }
 
         single_product_back.setOnClickListener { finish() }
         single_product_purchase.setOnClickListener { newPurchaseActivity() }
+        quantity.setOnClickListener {
+            Snackbar.make(quantity, R.string.design_purpose, Snackbar.LENGTH_LONG)
+                .setAction(R.string.alright) {
+                    // Responds to click on the action
+                }
+                .show()
+        }
 
     }
 

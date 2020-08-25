@@ -31,7 +31,7 @@ HSE24 App support the ability to add products to a local basket using [Room Data
 
 ### Great Design
 
-Design inspiration from the original HSE App
+Design inspiration from the original HSE24 App
 
 ## Technologies Used
 
@@ -49,6 +49,7 @@ Project is created with:
 * [Glide 4.8.0](https://github.com/bumptech/glide)
 * [Material Rating Bar 1.4.0](https://github.com/zhanghai/MaterialRatingBar)
 * [Circle Image View 3.1.0](https://github.com/hdodenhof/CircleImageView)
+* [SnackBar 1.2.0](https://material.io/components/snackbars)
 
 ## Screenshots
 
